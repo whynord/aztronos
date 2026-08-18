@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import logoImg from '../assets/aztronos-logo.png';
 
 const NAV_ITEMS = [
   { label: 'Nexus', href: '#nexus', corner: 'tl', code: '00.00' },
@@ -68,11 +69,11 @@ export default function PerimeterNavigation() {
         </a>
       ))}
 
-      {/* Centered Top Brand Logo (Double size) */}
+      {/* Centered Top Brand Logo */}
       <div className="fixed left-1/2 top-4 z-50 hidden -translate-x-1/2 md:flex items-center justify-center">
         <a href="#nexus" className="hover:opacity-75 transition-opacity block">
           <img
-            src="/aztronos-logo.png"
+            src={logoImg}
             alt="Aztronos Studio Logo"
             className="h-16 sm:h-18 w-auto object-contain mix-blend-multiply"
           />

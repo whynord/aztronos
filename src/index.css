@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #f8f9fa;
+    --foreground: #0a0a0c;
+    --foreground-muted: rgba(10, 10, 12, 0.55);
+    --border-color: rgba(10, 10, 12, 0.15);
+    
+    --accent-teal: hsl(174, 56%, 40%);
+    --accent-crimson: hsl(355, 75%, 56%);
+
+    --font-heading: 'Instrument Sans', system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-mono);
+    background-color: var(--background);
+    color: var(--foreground);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: var(--font-heading);
+  }
+}
+
+.label-mono {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+@keyframes perimBreath {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes fadeSlice {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-slice {
+  animation: fadeSlice 0.5s ease forwards;
+}
+
+/* Custom Scrollbar for Minimalist Grid */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f9fa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(10, 10, 12, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(10, 10, 12, 0.4);
+}

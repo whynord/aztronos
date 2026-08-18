@@ -11,7 +11,7 @@ export default function OccamFooter() {
               <img
                 src="/aztronos-logo.png"
                 alt="AZTRONOS STUDIO Logo"
-                className="h-10 w-auto object-contain mix-blend-multiply"
+                className="h-20 w-auto object-contain mix-blend-multiply"
               />
             </a>
             <p className="mt-4 max-w-sm font-mono text-xs leading-relaxed text-[#0a0a0c]/55">

@@ -68,13 +68,13 @@ export default function PerimeterNavigation() {
         </a>
       ))}
 
-      {/* Centered Top Brand Logo replacing the text "AZTRONOS" */}
+      {/* Centered Top Brand Logo (Double size) */}
       <div className="fixed left-1/2 top-4 z-50 hidden -translate-x-1/2 md:flex items-center justify-center">
         <a href="#nexus" className="hover:opacity-75 transition-opacity block">
           <img
             src="/aztronos-logo.png"
             alt="Aztronos Studio Logo"
-            className="h-8 sm:h-9 w-auto object-contain mix-blend-multiply"
+            className="h-16 sm:h-18 w-auto object-contain mix-blend-multiply"
           />
         </a>
       </div>

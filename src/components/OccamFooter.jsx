@@ -6,10 +6,14 @@ export default function OccamFooter() {
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-10 md:grid-cols-4">
           
-          <div className="md:col-span-2">
-            <span className="font-heading text-2xl font-medium tracking-[-0.02em] text-[#0a0a0c]">
-              AZTRONOS
-            </span>
+          <div className="md:col-span-2 space-y-3">
+            <a href="#nexus" className="inline-block hover:opacity-75 transition-opacity">
+              <img
+                src="/aztronos-logo.png"
+                alt="AZTRONOS STUDIO Logo"
+                className="h-10 w-auto object-contain mix-blend-multiply"
+              />
+            </a>
             <p className="mt-4 max-w-sm font-mono text-xs leading-relaxed text-[#0a0a0c]/55">
               An instrument for discovery. We explore the uncharted universe to resolve complex problems into their simplest, truest form.
             </p>
@@ -63,7 +67,7 @@ export default function OccamFooter() {
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-[#0a0a0c]/10 pt-6 md:flex-row md:items-center">
           <span className="label-mono text-[8px] text-[#0a0a0c]/40">
-            © {new Date().getFullYear()} AZTRONOS — THE OCCAM GRID
+            © {new Date().getFullYear()} AZTRONOS STUDIO — THE OCCAM GRID
           </span>
           <a
             href="#nexus"

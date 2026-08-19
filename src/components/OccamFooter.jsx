@@ -1,5 +1,5 @@
 import React from 'react';
-import logoImg from '../assets/aztronos-logo-transparent.png';
+import Logo from './Logo';
 
 export default function OccamFooter() {
   return (
@@ -9,11 +9,7 @@ export default function OccamFooter() {
           
           <div className="md:col-span-2 space-y-3">
             <a href="#nexus" className="inline-block hover:opacity-75 transition-opacity">
-              <img
-                src={logoImg}
-                alt="AZTRONOS STUDIO Logo"
-                className="h-20 w-auto object-contain"
-              />
+              <Logo className="h-20 w-auto" />
             </a>
             <p className="mt-4 max-w-sm font-mono text-xs leading-relaxed text-[var(--fg)]/55">
               An instrument for discovery. We explore the uncharted universe to resolve complex problems into their simplest, truest form.

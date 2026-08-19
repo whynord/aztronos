@@ -86,6 +86,17 @@
   letter-spacing: 0.1em;
 }
 
+/* Brand wordmark — clean vector, rendered as a flat monochrome mark.
+   Black on the lit hero; inverts to white once <html> gains .theme-dark
+   (the dark "uncharted" territory). The filter keeps it on-palette. */
+.brand-logo {
+  filter: brightness(0);
+  transition: filter var(--theme-fade) ease;
+}
+html.theme-dark .brand-logo {
+  filter: brightness(0) invert(1);
+}
+
 /* Theme crossfade — the whole palette inverts smoothly as the visitor moves
    from the lit origin into the dark uncharted territory. */
 html, body, main, section, footer, header,

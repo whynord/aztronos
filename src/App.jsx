@@ -1,4 +1,5 @@
 import React from 'react';
+import { useScrollTheme } from './hooks/useScrollTheme';
 import BackgroundGridCanvas from './components/BackgroundGridCanvas';
 import CustomCursor from './components/CustomCursor';
 import PerimeterNavigation from './components/PerimeterNavigation';
@@ -10,8 +11,12 @@ import FrictionlessGateway from './components/FrictionlessGateway';
 import OccamFooter from './components/OccamFooter';
 
 export default function App() {
+  // Palette inverts from light "origin" to dark "uncharted territory" as the
+  // visitor scrolls past the hero.
+  useScrollTheme(0.55);
+
   return (
-    <div className="relative min-h-screen bg-[#f8f9fa] text-[#0a0a0c]">
+    <div className="relative min-h-screen">
       {/* Background Interactive Canvas Grid */}
       <BackgroundGridCanvas />
 

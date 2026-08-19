@@ -33,10 +33,10 @@ const CASES = [
 function WireframeSVG({ id, accent }) {
   return (
     <svg viewBox="0 0 400 300" className="h-full w-full">
-      <rect x="0.5" y="0.5" width="399" height="299" fill="none" stroke="hsl(240 6% 7% / 0.2)" strokeWidth="0.5" />
+      <rect x="0.5" y="0.5" width="399" height="299" fill="none" stroke="var(--fg)" strokeOpacity="0.2" strokeWidth="0.5" />
       
       {[[20, 20], [380, 20], [20, 280], [380, 280]].map(([x, y], idx) => (
-        <g key={idx} stroke="hsl(240 6% 7% / 0.35)" strokeWidth="0.5">
+        <g key={idx} stroke="var(--fg)" strokeOpacity="0.35" strokeWidth="0.5">
           <line x1={x - 6} y1={y} x2={x + 6} y2={y} />
           <line x1={x} y1={y - 6} x2={x} y2={y + 6} />
         </g>
@@ -69,7 +69,7 @@ function WireframeSVG({ id, accent }) {
         </g>
       )}
 
-      <text x="20" y="285" className="label-mono" fill="hsl(240 6% 7% / 0.5)" fontSize="7">
+      <text x="20" y="285" className="label-mono" fill="var(--fg)" fillOpacity="0.5" fontSize="7">
         FIG. {id} — WIREFRAME
       </text>
     </svg>
@@ -86,21 +86,21 @@ export default function ImpactLedger() {
         {/* Header */}
         <div className="mb-16 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <span className="label-mono mb-4 block text-[9px] text-[#0a0a0c]/50">
+            <span className="label-mono mb-4 block text-[9px] text-[var(--fg)]/50">
               [ 03 ] The Impact Ledger
             </span>
-            <h2 className="font-heading text-4xl font-medium tracking-[-0.02em] text-[#0a0a0c] sm:text-5xl md:text-6xl">
+            <h2 className="font-heading text-4xl font-medium tracking-[-0.02em] text-[var(--fg)] sm:text-5xl md:text-6xl">
               Proof, rendered as <br />
-              <span className="italic font-normal text-[#0a0a0c]/60">aesthetic data.</span>
+              <span className="italic font-normal text-[var(--fg)]/60">aesthetic data.</span>
             </h2>
           </div>
-          <p className="max-w-xs font-mono text-xs leading-relaxed text-[#0a0a0c]/55">
+          <p className="max-w-xs font-mono text-xs leading-relaxed text-[var(--fg)]/55">
             Each engagement begins as a wireframe of the problem and resolves into a measurable structure. Hover to see the result.
           </p>
         </div>
 
         {/* 3 Impact Cards Grid */}
-        <div className="grid gap-px bg-[#0a0a0c]/10 md:grid-cols-3">
+        <div className="grid gap-px bg-[var(--fg)]/10 md:grid-cols-3">
           {CASES.map((item) => {
             const isHovered = hoveredId === item.id;
             return (
@@ -108,10 +108,10 @@ export default function ImpactLedger() {
                 key={item.id}
                 onMouseEnter={() => setHoveredId(item.id)}
                 onMouseLeave={() => setHoveredId(null)}
-                className="group relative bg-[#f8f9fa] border border-transparent hover:border-[#0a0a0c]/20 transition-all"
+                className="group relative bg-[var(--bg)] border border-transparent hover:border-[var(--fg)]/20 transition-all"
               >
                 {/* Visual Image / SVG Container */}
-                <div className="relative aspect-[4/3] overflow-hidden bg-[#f4f5f6]">
+                <div className="relative aspect-[4/3] overflow-hidden bg-[var(--surface)]">
                   {/* SVG Wireframe View */}
                   <div className={`absolute inset-0 transition-opacity duration-500 ${isHovered ? 'opacity-0' : 'opacity-100'}`}>
                     <WireframeSVG id={item.id} accent={item.accent} />
@@ -124,10 +124,10 @@ export default function ImpactLedger() {
                       alt={item.title}
                       className="h-full w-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c]/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--fg)]/40 to-transparent" />
                   </div>
 
-                  <span className="absolute left-4 top-4 label-mono text-[8px] text-[#0a0a0c]/55">
+                  <span className="absolute left-4 top-4 label-mono text-[8px] text-[var(--fg)]/55">
                     {item.id} / 03
                   </span>
                 </div>
@@ -135,15 +135,15 @@ export default function ImpactLedger() {
                 {/* Content Details */}
                 <div className="flex flex-col gap-3 p-6">
                   <div className="flex items-baseline justify-between">
-                    <h3 className="font-heading text-xl font-medium tracking-[-0.01em] text-[#0a0a0c]">
+                    <h3 className="font-heading text-xl font-medium tracking-[-0.01em] text-[var(--fg)]">
                       {item.title}
                     </h3>
-                    <span className="label-mono text-[8px] text-[#0a0a0c]/45">
+                    <span className="label-mono text-[8px] text-[var(--fg)]/45">
                       {item.domain}
                     </span>
                   </div>
 
-                  <p className="font-mono text-xs leading-relaxed text-[#0a0a0c]/60">
+                  <p className="font-mono text-xs leading-relaxed text-[var(--fg)]/60">
                     {item.summary}
                   </p>
 
@@ -151,10 +151,10 @@ export default function ImpactLedger() {
                     <span className="font-heading text-lg font-medium" style={{ color: item.accent }}>
                       {item.metric}
                     </span>
-                    <span className="h-px flex-1 bg-[#0a0a0c]/15" />
+                    <span className="h-px flex-1 bg-[var(--fg)]/15" />
                     <a
                       href="#gateway"
-                      className="label-mono text-[8px] text-[#0a0a0c]/60 transition-colors hover:text-[#0a0a0c]"
+                      className="label-mono text-[8px] text-[var(--fg)]/60 transition-colors hover:text-[var(--fg)]"
                     >
                       Discovery ↗
                     </a>

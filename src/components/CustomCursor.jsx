@@ -41,12 +41,12 @@ export default function CustomCursor() {
     >
       {/* Crosshair + */}
       <div className="absolute -left-[7px] -top-[7px] h-3.5 w-3.5">
-        <span className="absolute left-1/2 top-0 h-3.5 w-px -translate-x-1/2 bg-[#0a0a0c]/70" />
-        <span className="absolute top-1/2 left-0 h-px w-3.5 -translate-y-1/2 bg-[#0a0a0c]/70" />
+        <span className="absolute left-1/2 top-0 h-3.5 w-px -translate-x-1/2 bg-[var(--fg)]/70" />
+        <span className="absolute top-1/2 left-0 h-px w-3.5 -translate-y-1/2 bg-[var(--fg)]/70" />
       </div>
 
       {/* Live Coordinate Label */}
-      <span className="label-mono absolute left-3 top-3 whitespace-nowrap text-[8px] leading-none text-[#0a0a0c]/55">
+      <span className="label-mono absolute left-3 top-3 whitespace-nowrap text-[8px] leading-none text-[var(--fg)]/55">
         {pos.x}, {pos.y}
       </span>
     </div>

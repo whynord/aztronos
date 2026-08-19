@@ -37,7 +37,7 @@ export default function LogicStream() {
           
           {/* Left Column: Generative Entropy (The Problem) */}
           <div className="flex-1">
-            <span className="label-mono mb-4 block text-[9px] text-[#e63946]">
+            <span className="label-mono mb-4 block text-[9px] text-[var(--accent-crimson)]">
               [ 01 ] The Problem — Generative Entropy
             </span>
 
@@ -108,8 +108,8 @@ export default function LogicStream() {
                       textDecoration: isActive ? 'none' : 'line-through',
                     }}
                   >
-                    <span className="text-[#0a0a0c]/40">0{i + 1}</span>
-                    <span className={isActive ? 'text-[#0a0a0c]/70' : 'text-[#0a0a0c]/30'}>
+                    <span className="text-[var(--fg)]/40">0{i + 1}</span>
+                    <span className={isActive ? 'text-[var(--fg)]/70' : 'text-[var(--fg)]/30'}>
                       {p}
                     </span>
                   </div>
@@ -119,11 +119,11 @@ export default function LogicStream() {
           </div>
 
           {/* Divider Line */}
-          <div className="hidden h-72 w-px bg-[#0a0a0c]/15 md:block" />
+          <div className="hidden h-72 w-px bg-[var(--fg)]/15 md:block" />
 
           {/* Right Column: Occam's Razor (The Solution) */}
           <div className="flex-1">
-            <span className="label-mono mb-4 block text-[9px] text-[#2a9d8f]">
+            <span className="label-mono mb-4 block text-[9px] text-[var(--accent-teal)]">
               [ 02 ] The Solution — Occam's Razor
             </span>
 
@@ -132,18 +132,18 @@ export default function LogicStream() {
                 isResolved ? 'opacity-100 translate-x-0' : 'opacity-60 translate-x-2'
               }`}
             >
-              <p className="font-heading text-3xl font-medium leading-tight tracking-[-0.02em] text-[#0a0a0c] sm:text-4xl md:text-5xl">
+              <p className="font-heading text-3xl font-medium leading-tight tracking-[-0.02em] text-[var(--fg)] sm:text-4xl md:text-5xl">
                 Among competing hypotheses, the simplest — the one that makes the fewest assumptions — is invariably the truest.
               </p>
 
               <div className="mt-8 flex items-center gap-4">
-                <span className="h-px w-16 bg-[#2a9d8f]" />
-                <span className="label-mono text-[9px] text-[#2a9d8f] font-semibold">
+                <span className="h-px w-16 bg-[var(--accent-teal)]" />
+                <span className="label-mono text-[9px] text-[var(--accent-teal)] font-semibold">
                   Lex Parsimoniae
                 </span>
               </div>
 
-              <p className="mt-8 max-w-sm font-mono text-xs leading-relaxed text-[#0a0a0c]/55">
+              <p className="mt-8 max-w-sm font-mono text-xs leading-relaxed text-[var(--fg)]/55">
                 Deep understanding of the problem connects the dots that resolve to a simple solution. We facilitate execution and remove friction — the aesthetic and the logic, balanced.
               </p>
             </div>
@@ -153,15 +153,15 @@ export default function LogicStream() {
 
         {/* Scroll Progress Bar (Chaos -> Clarity) */}
         <div className="absolute bottom-8 left-1/2 hidden w-64 -translate-x-1/2 md:block">
-          <div className="h-px w-full bg-[#0a0a0c]/15">
+          <div className="h-px w-full bg-[var(--fg)]/15">
             <div
-              className="h-px bg-[#0a0a0c]/60 transition-all duration-150"
+              className="h-px bg-[var(--fg)]/60 transition-all duration-150"
               style={{ width: `${scrollProgress * 100}%` }}
             />
           </div>
           <div className="mt-2 flex justify-between">
-            <span className="label-mono text-[8px] text-[#0a0a0c]/40">CHAOS</span>
-            <span className="label-mono text-[8px] text-[#0a0a0c]/40">CLARITY</span>
+            <span className="label-mono text-[8px] text-[var(--fg)]/40">CHAOS</span>
+            <span className="label-mono text-[8px] text-[var(--fg)]/40">CLARITY</span>
           </div>
         </div>
 

@@ -6,18 +6,39 @@
     --foreground: #0a0a0c;
     --foreground-muted: rgba(10, 10, 12, 0.55);
     --border-color: rgba(10, 10, 12, 0.15);
-    
+
+    /* Theme tokens — flipped by `.theme-dark` on <html> as the visitor
+       scrolls from the lit "origin" (hero) into the dark "uncharted" territory. */
+    --bg: #f8f9fa;
+    --fg: #0a0a0c;
+    --surface: #f4f5f6;
+    --grid-rgb: 10, 10, 12;
+
     --accent-teal: hsl(174, 56%, 40%);
     --accent-crimson: hsl(355, 75%, 56%);
 
     --font-heading: 'Instrument Sans', system-ui, sans-serif;
     --font-mono: 'IBM Plex Mono', monospace;
+
+    --theme-fade: 700ms;
+  }
+
+  :root.theme-dark {
+    --background: #0a0a0c;
+    --foreground: #f8f9fa;
+    --foreground-muted: rgba(248, 249, 250, 0.6);
+    --border-color: rgba(248, 249, 250, 0.15);
+
+    --bg: #0a0a0c;
+    --fg: #f8f9fa;
+    --surface: #14161a;
+    --grid-rgb: 248, 249, 250;
   }
 
   body {
     font-family: var(--font-mono);
-    background-color: var(--background);
-    color: var(--foreground);
+    background-color: var(--bg);
+    color: var(--fg);
     overflow-x: hidden;
     scroll-behavior: smooth;
   }
@@ -31,6 +52,18 @@
   font-family: var(--font-mono);
   text-transform: uppercase;
   letter-spacing: 0.1em;
+}
+
+/* Theme crossfade — the whole palette inverts smoothly as the visitor moves
+   from the lit origin into the dark uncharted territory. */
+html, body, main, section, footer, header,
+div, a, span, p, h1, h2, h3, h4, article,
+svg, path, ellipse, line, circle, rect, img {
+  transition: background-color var(--theme-fade) ease,
+              color var(--theme-fade) ease,
+              border-color var(--theme-fade) ease,
+              fill var(--theme-fade) ease,
+              stroke var(--theme-fade) ease;
 }
 
 @keyframes perimBreath {
@@ -59,13 +92,13 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f8f9fa;
+  background: var(--bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(10, 10, 12, 0.2);
+  background: rgba(var(--grid-rgb), 0.2);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(10, 10, 12, 0.4);
+  background: rgba(var(--grid-rgb), 0.4);
 }

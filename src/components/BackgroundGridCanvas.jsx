@@ -1,10 +1,17 @@
 import React, { useRef, useEffect } from 'react';
+import { getGridRGB, onGridColorChange } from '../theme';
 
 export default function BackgroundGridCanvas() {
   const canvasRef = useRef(null);
   const mouseRef = useRef({ x: -9999, y: -9999, active: false });
+  const gridRGBRef = useRef(getGridRGB());
 
   useEffect(() => {
+    // Keep the canvas line color in sync with the DOM palette inversion.
+    const unsub = onGridColorChange((rgb) => {
+      gridRGBRef.current = rgb;
+    });
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -41,6 +48,7 @@ export default function BackgroundGridCanvas() {
       const my = mouseRef.current.y;
       const isActive = mouseRef.current.active;
       const radius = 180;
+      const rgb = gridRGBRef.current;
 
       // Draw Vertical Grid Lines
       for (let x = 0; x <= width; x += GRID_SIZE) {
@@ -51,7 +59,7 @@ export default function BackgroundGridCanvas() {
             opacity = 0.05 + (1 - dist / radius) * 0.32;
           }
         }
-        ctx.strokeStyle = `rgba(10, 10, 12, ${opacity})`;
+        ctx.strokeStyle = `rgba(${rgb}, ${opacity})`;
         ctx.lineWidth = 0.5;
         ctx.beginPath();
 
@@ -76,7 +84,7 @@ export default function BackgroundGridCanvas() {
             opacity = 0.05 + (1 - dist / radius) * 0.32;
           }
         }
-        ctx.strokeStyle = `rgba(10, 10, 12, ${opacity})`;
+        ctx.strokeStyle = `rgba(${rgb}, ${opacity})`;
         ctx.lineWidth = 0.5;
         ctx.beginPath();
         ctx.moveTo(0, y);
@@ -104,6 +112,7 @@ export default function BackgroundGridCanvas() {
     document.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
+      unsub();
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);

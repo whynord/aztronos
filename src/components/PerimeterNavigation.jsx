@@ -44,7 +44,7 @@ export default function PerimeterNavigation() {
       {/* Perimeter Line */}
       <div
         aria-hidden="true"
-        className="pointer-events-none fixed inset-3 z-40 border border-[#0a0a0c]/15 animate-[perimBreath_6s_ease-in-out_infinite]"
+        className="pointer-events-none fixed inset-3 z-40 border border-[var(--fg)]/15 animate-[perimBreath_6s_ease-in-out_infinite]"
       />
 
       {/* 4 Corner Navigation Anchors */}
@@ -54,14 +54,14 @@ export default function PerimeterNavigation() {
           href={item.href}
           className={`fixed z-50 flex flex-col gap-1 ${CORNER_CLASSES[item.corner]} hidden md:flex`}
         >
-          <span className="label-mono text-[8px] text-[#0a0a0c]/40">
+          <span className="label-mono text-[8px] text-[var(--fg)]/40">
             {item.code}
           </span>
           <span
             className={`label-mono text-[10px] transition-colors duration-300 ${
               activeSection === item.href.slice(1)
-                ? 'text-[#0a0a0c]'
-                : 'text-[#0a0a0c]/45 hover:text-[#0a0a0c]'
+                ? 'text-[var(--fg)]'
+                : 'text-[var(--fg)]/45 hover:text-[var(--fg)]'
             }`}
           >
             {item.label}

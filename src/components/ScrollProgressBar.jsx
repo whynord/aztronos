@@ -19,13 +19,13 @@ export default function ScrollProgressBar() {
       aria-hidden="true"
       className="pointer-events-none fixed left-1/2 top-0 z-30 hidden h-full w-px -translate-x-1/2 md:block"
     >
-      <div className="absolute inset-0 bg-[#0a0a0c]/8" />
+      <div className="absolute inset-0 bg-[var(--fg)]/8" />
       <div
-        className="absolute left-0 top-0 w-px bg-[#0a0a0c]/45"
+        className="absolute left-0 top-0 w-px bg-[var(--fg)]/45"
         style={{ height: `${scrollProgress * 100}%` }}
       />
       <div
-        className="absolute left-1/2 h-px w-3 -translate-x-1/2 bg-[#0a0a0c]/60"
+        className="absolute left-1/2 h-px w-3 -translate-x-1/2 bg-[var(--fg)]/60"
         style={{ top: `${scrollProgress * 100}%` }}
       />
     </div>

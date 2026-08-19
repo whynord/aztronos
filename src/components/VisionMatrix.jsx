@@ -38,7 +38,7 @@ export default function VisionMatrix() {
   ];
 
   return (
-    <section id="vision" className="py-24 relative border-t border-white/5 bg-[#060810] overflow-hidden">
+    <section id="vision" className="py-24 relative border-t border-white/5 bg-transparent overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}

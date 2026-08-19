@@ -7,6 +7,11 @@ import ScrollProgressBar from './components/ScrollProgressBar';
 import NexusHero from './components/NexusHero';
 import LogicStream from './components/LogicStream';
 import ImpactLedger from './components/ImpactLedger';
+import MathArtLab from './components/MathArtLab';
+import DNAProcess from './components/DNAProcess';
+import CaseStudies from './components/CaseStudies';
+import VisionMatrix from './components/VisionMatrix';
+import AboutOrigin from './components/AboutOrigin';
 import FrictionlessGateway from './components/FrictionlessGateway';
 import OccamFooter from './components/OccamFooter';
 
@@ -34,6 +39,14 @@ export default function App() {
         <NexusHero />
         <LogicStream />
         <ImpactLedger />
+
+        {/* Deep "uncharted territory" instruments — dark, Occam-palette */}
+        <MathArtLab />
+        <DNAProcess />
+        <CaseStudies />
+        <VisionMatrix />
+        <AboutOrigin />
+
         <FrictionlessGateway />
       </main>
 

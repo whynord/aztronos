@@ -157,7 +157,7 @@ export default function MathArtLab() {
   }, [activeLabMode, speed, density, filterThreshold]);
 
   return (
-    <section id="lab" className="py-24 relative border-t border-white/5 bg-[#070a14] overflow-hidden">
+    <section id="lab" className="py-24 relative border-t border-white/5 bg-transparent overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}

@@ -3,7 +3,7 @@ import { Compass, Sparkles, BookOpen, Shield, ArrowUpRight, Users, Globe } from 
 
 export default function AboutOrigin() {
   return (
-    <section id="about" className="py-24 relative border-t border-white/5 bg-[#070b16] overflow-hidden">
+    <section id="about" className="py-24 relative border-t border-white/5 bg-transparent overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

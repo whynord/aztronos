@@ -64,7 +64,7 @@ export default function DNAProcess() {
   const current = steps[activeStep];
 
   return (
-    <section id="dna" className="py-24 relative border-t border-white/5 bg-[#060810] overflow-hidden math-grid">
+    <section id="dna" className="py-24 relative border-t border-white/5 bg-transparent overflow-hidden math-grid">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}

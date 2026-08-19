@@ -55,7 +55,7 @@ export default function CaseStudies() {
   const current = cases[selectedCase];
 
   return (
-    <section id="work" className="py-24 relative border-t border-white/5 bg-[#070b16] overflow-hidden">
+    <section id="work" className="py-24 relative border-t border-white/5 bg-transparent overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}

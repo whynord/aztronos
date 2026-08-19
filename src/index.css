@@ -1,5 +1,29 @@
 @import "tailwindcss";
 
+/* Re-map the color scales the deep "uncharted territory" instruments were
+   authored against (cosmic cyan/gold) onto the Aztronos Occam palette:
+   teal = primary/order/solution, crimson = problem/entropy, amber = the
+   on-brief "subtle gold". This keeps the wired light components untouched
+   (they use CSS vars, not Tailwind color utilities). */
+@theme {
+  --color-cyan-300: #46c2b3;
+  --color-cyan-400: #2a9d8f;
+  --color-cyan-500: #1f7d72;
+  --color-cyan-600: #18685f;
+  --color-cyan-950: #06201d;
+
+  --color-emerald-400: #2a9d8f;
+  --color-emerald-500: #1f7d72;
+
+  --color-red-400: #e63946;
+  --color-red-500: #d12d3a;
+  --color-red-950: #2a0b0e;
+
+  --color-purple-300: #2a9d8f;
+  --color-purple-400: #2a9d8f;
+  --color-purple-500: #1f7d72;
+}
+
 @layer base {
   :root {
     --background: #f8f9fa;
@@ -101,4 +125,67 @@ svg, path, ellipse, line, circle, rect, img {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(var(--grid-rgb), 0.4);
+}
+
+/* ---- Utilities for the deep "uncharted territory" instruments ----
+   The math-art lab, DNA method, vision matrix and about sections were
+   authored against a cosmic cyan/gold layer that never shipped. These
+   define the few classes they rely on, mapped to the Occam palette so
+   the deep sections read as the dark side of the same grid. */
+.font-display {
+  font-family: var(--font-heading);
+}
+
+.glass-panel,
+.glass-panel-cyan {
+  background: rgba(20, 22, 26, 0.6);
+  border: 1px solid rgba(248, 249, 250, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.glass-panel-cyan {
+  border-color: rgba(42, 157, 143, 0.3);
+}
+
+.math-grid {
+  background-image:
+    linear-gradient(rgba(248, 249, 250, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(248, 249, 250, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.math-grid-dense {
+  background-image:
+    linear-gradient(rgba(248, 249, 250, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(248, 249, 250, 0.06) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(90deg, #2a9d8f, #e63946);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes pulseSlow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.animate-pulse-slow {
+  animation: pulseSlow 2.4s ease-in-out infinite;
+}
+
+@keyframes spinSlow {
+  to { transform: rotate(360deg); }
+}
+.spin-slow {
+  animation: spinSlow 14s linear infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease forwards;
 }

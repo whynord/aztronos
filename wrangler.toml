@@ -1,0 +1,8 @@
+name = "aztronos"
+main = "worker.js"
+compatibility_date = "2026-08-19"
+
+# Serve the Vite static build (dist/) as the Worker's assets.
+# When you connect this repo to the Cloudflare Worker (Git deploy),
+# set Build command = `npm run build` and Output directory = `dist`.
+assets = { directory = "dist", binding = "ASSETS" }

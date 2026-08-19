@@ -1,120 +1,120 @@
-import React, { useState } from 'react';
-import { Eye, ShieldAlert, ShieldCheck, ArrowRight, Check, X, Scale, Layers } from 'lucide-react';
+import React from 'react';
+import { ShieldAlert, ShieldCheck, Check, X } from 'lucide-react';
+
+const comparisons = [
+  {
+    dimension: 'Problem Framing',
+    conventional: 'Applies pre-packaged template solutions to symptoms',
+    aztronos: 'Deep mathematical problem mapping down to root constraints',
+    highlight: 'Respects origin of complexity',
+  },
+  {
+    dimension: 'Solution Design',
+    conventional: 'Bloated multi-initiative decks with high cognitive drag',
+    aztronos: "Occam's Razor simplicity: fewest actions for maximum impact",
+    highlight: 'Minimal cognitive load',
+  },
+  {
+    dimension: 'Execution Readiness',
+    conventional: 'Handed off as theoretical strategy recommendations',
+    aztronos: 'Built for instant implementation with explicit decision rules',
+    highlight: 'Zero friction handoff',
+  },
+  {
+    dimension: 'Partnership Dynamic',
+    conventional: 'Transactional vendor delivering remote slide decks',
+    aztronos: 'Co-explorer embedding with your team to share risk & credit',
+    highlight: 'Shared risk & credit',
+  },
+  {
+    dimension: 'Experience Quality',
+    conventional: 'Rigid, bureaucratic, and jargon-heavy',
+    aztronos: 'Aesthetic & Logic: clean, beautiful, rational, purposeful',
+    highlight: 'Poetic precision',
+  },
+];
 
 export default function VisionMatrix() {
-  const [activeTab, setActiveTab] = useState('matrix');
-
-  const comparisons = [
-    {
-      dimension: 'Problem Framing',
-      conventional: 'Applies pre-packaged template solutions to symptoms',
-      aztronos: 'Deep mathematical problem mapping down to root constraints',
-      highlight: 'Respects origin of complexity'
-    },
-    {
-      dimension: 'Solution Design',
-      conventional: 'Bloated multi-initiative decks with high cognitive drag',
-      aztronos: "Occam's Razor simplicity: fewest actions for maximum impact",
-      highlight: 'Minimal cognitive load'
-    },
-    {
-      dimension: 'Execution Readiness',
-      conventional: 'Handed off as theoretical strategy recommendations',
-      aztronos: 'Built for instant implementation with explicit decision rules',
-      highlight: 'Zero friction handoff'
-    },
-    {
-      dimension: 'Partnership Dynamic',
-      conventional: 'Transactional vendor delivering remote slide decks',
-      aztronos: 'Co-explorer embedding with your team to share risk & credit',
-      highlight: 'Shared risk & credit'
-    },
-    {
-      dimension: 'Experience Quality',
-      conventional: 'Rigid, bureaucratic, and jargon-heavy',
-      aztronos: 'Aesthetic & Logic: clean, beautiful, rational, purposeful',
-      highlight: 'Poetic precision'
-    }
-  ];
-
   return (
-    <section id="vision" className="py-24 relative border-t border-white/5 bg-transparent overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+    <section id="vision" className="relative px-6 py-32 md:py-48 z-20 border-t border-[var(--fg)]/15">
+      <div className="mx-auto max-w-6xl">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 font-mono text-xs font-semibold mb-4">
-            <Eye className="w-3.5 h-3.5" />
-            VISION & OPERATIONAL LOGIC
+        <div className="mb-16 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <span className="label-mono mb-4 block text-[9px] text-[var(--fg)]/50">
+              [ 08 ] Vision & Operational Logic
+            </span>
+            <h2 className="font-heading text-4xl font-medium tracking-[-0.02em] text-[var(--fg)] sm:text-5xl md:text-6xl">
+              Aesthetic meets <br />
+              <span className="italic font-normal text-[var(--fg)]/60">logic.</span>
+            </h2>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
-            Aesthetic Meets <span className="text-gradient-cyan">Logic</span>
-          </h2>
-          <p className="text-slate-400 text-base sm:text-lg">
-            We balance the origin of the problem with the simplicity of the solution—removing friction so strategy feels as clear as good design.
+          <p className="max-w-xs font-mono text-xs leading-relaxed text-[var(--fg)]/55">
+            We balance the origin of the problem with the simplicity of the solution — removing friction so strategy feels as clear as good design.
           </p>
         </div>
 
-        {/* Vision Statement Hero Banner */}
-        <div className="p-8 sm:p-10 rounded-2xl glass-panel-cyan border border-cyan-500/30 text-center mb-16 relative overflow-hidden">
-          <div className="absolute -top-12 -left-12 w-40 h-40 bg-cyan-500/10 rounded-full blur-2xl" />
-          <h3 className="text-2xl sm:text-3xl font-display font-semibold text-white mb-4 leading-snug">
-            “We balance the complexity of real problems with the simplicity of executable solutions—removing friction so strategy feels as clear as good design.”
+        {/* Vision Statement Banner */}
+        <div className="mb-16 border border-[var(--fg)]/15 bg-[var(--bg)]/40 p-8 text-center sm:p-10">
+          <h3 className="font-heading text-2xl font-medium leading-snug tracking-[-0.01em] text-[var(--fg)] sm:text-3xl">
+            “We balance the complexity of real problems with the simplicity of executable solutions — removing friction so strategy feels as clear as good design.”
           </h3>
-          <span className="font-mono text-xs text-cyan-400 tracking-wider">
+          <span className="label-mono mt-4 block text-[8px]" style={{ color: 'var(--accent-teal)' }}>
             [ OPERATIONAL VISION STATEMENT ]
           </span>
         </div>
 
         {/* Comparison Matrix Table */}
-        <div className="rounded-2xl glass-panel border border-cyan-500/20 overflow-hidden shadow-2xl">
-          
+        <div className="overflow-hidden border border-[var(--fg)]/15">
           {/* Table Header */}
-          <div className="grid grid-cols-1 md:grid-cols-12 bg-slate-950 p-5 border-b border-white/10 font-mono text-xs font-semibold">
-            <div className="md:col-span-3 text-slate-400 uppercase">DIMENSION</div>
-            <div className="md:col-span-4 text-red-400 flex items-center gap-2 mt-2 md:mt-0">
-              <ShieldAlert className="w-4 h-4" />
-              TYPICAL VENDOR APPROACH
+          <div className="grid grid-cols-1 border-b border-[var(--fg)]/15 bg-[var(--bg)]/60 p-5 font-mono text-xs font-semibold md:grid-cols-12">
+            <div className="text-[var(--fg)]/45 uppercase md:col-span-3">Dimension</div>
+            <div className="mt-2 flex items-center gap-2 text-[var(--accent-crimson)] md:col-span-4 md:mt-0">
+              <ShieldAlert className="h-4 w-4" />
+              Typical Vendor Approach
             </div>
-            <div className="md:col-span-5 text-cyan-400 flex items-center gap-2 mt-2 md:mt-0">
-              <ShieldCheck className="w-4 h-4" />
-              AZTRONOS CO-EXPLORATION
+            <div className="mt-2 flex items-center gap-2 text-[var(--accent-teal)] md:col-span-5 md:mt-0">
+              <ShieldCheck className="h-4 w-4" />
+              Aztronos Co-Exploration
             </div>
           </div>
 
           {/* Matrix Rows */}
-          <div className="divide-y divide-white/5">
+          <div>
             {comparisons.map((item, idx) => (
-              <div key={idx} className="grid grid-cols-1 md:grid-cols-12 p-6 hover:bg-slate-900/40 transition-colors items-center gap-4">
-                
-                {/* Dimension */}
+              <div
+                key={idx}
+                className="grid grid-cols-1 items-center gap-4 border-b border-[var(--fg)]/10 p-6 last:border-b-0 md:grid-cols-12"
+              >
                 <div className="md:col-span-3">
-                  <span className="font-display font-bold text-white text-base block">
-                    {item.dimension}
-                  </span>
-                  <span className="text-[11px] font-mono text-cyan-400/80 mt-1 block">
+                  <span className="font-heading text-base font-medium text-[var(--fg)]">{item.dimension}</span>
+                  <span
+                    className="label-mono mt-1 block text-[8px]"
+                    style={{ color: 'var(--accent-amber)' }}
+                  >
                     [{item.highlight}]
                   </span>
                 </div>
 
-                {/* Conventional */}
-                <div className="md:col-span-4 p-4 rounded-xl bg-red-950/20 border border-red-500/10 text-xs text-slate-300 flex items-start gap-3">
-                  <X className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+                <div
+                  className="flex items-start gap-3 border border-[var(--fg)]/10 p-4 text-xs text-[var(--fg)]/65 md:col-span-4"
+                  style={{ borderLeft: '2px solid var(--accent-crimson)' }}
+                >
+                  <X className="mt-0.5 h-4 w-4 shrink-0" style={{ color: 'var(--accent-crimson)' }} />
                   <span>{item.conventional}</span>
                 </div>
 
-                {/* Aztronos */}
-                <div className="md:col-span-5 p-4 rounded-xl bg-cyan-950/30 border border-cyan-500/30 text-xs text-slate-100 flex items-start gap-3 shadow-[0_0_15px_rgba(0,240,255,0.05)]">
-                  <Check className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                <div
+                  className="flex items-start gap-3 border border-[var(--fg)]/10 p-4 text-xs md:col-span-5"
+                  style={{ borderLeft: '2px solid var(--accent-teal)', color: 'var(--fg)' }}
+                >
+                  <Check className="mt-0.5 h-4 w-4 shrink-0" style={{ color: 'var(--accent-teal)' }} />
                   <span className="font-medium">{item.aztronos}</span>
                 </div>
-
               </div>
             ))}
           </div>
-
         </div>
-
       </div>
     </section>
   );

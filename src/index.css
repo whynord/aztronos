@@ -22,6 +22,13 @@
   --color-purple-300: #2a9d8f;
   --color-purple-400: #2a9d8f;
   --color-purple-500: #1f7d72;
+
+  /* Amber remapped to the on-brief "subtle gold" so any amber-* utility in
+     the wired sections reads as a quiet Occam accent, not neon gold. */
+  --color-amber-300: #c9a227;
+  --color-amber-400: #b08d22;
+  --color-amber-500: #8c7019;
+  --color-amber-950: #1f1a06;
 }
 
 @layer base {
@@ -40,6 +47,7 @@
 
     --accent-teal: hsl(174, 56%, 40%);
     --accent-crimson: hsl(355, 75%, 56%);
+    --accent-amber: hsl(43, 68%, 45%);
 
     --font-heading: 'Instrument Sans', system-ui, sans-serif;
     --font-mono: 'IBM Plex Mono', monospace;

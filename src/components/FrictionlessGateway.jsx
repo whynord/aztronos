@@ -90,7 +90,7 @@ export default function FrictionlessGateway() {
         {/* Section Header */}
         <div className="mb-12 text-center">
           <span className="label-mono mb-4 block text-[9px] text-[var(--fg)]/50">
-            [ 04 ] The Frictionless Gateway
+            [ 10 ] The Frictionless Gateway
           </span>
           <h2 className="font-heading text-4xl font-medium tracking-[-0.02em] text-[var(--fg)] sm:text-5xl md:text-6xl">
             Three questions. <br />
